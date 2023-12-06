@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>POKEDÉX</title>
+    <script src="js/script.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shorcut icon" href="img/Pokemon-Logo.ico">
+</head>
+
+<body>
+    <header>
+        <div class="cabecalho">
+            <div class="logo-content">
+                <img src="img/Pokemon-Logo.png" class="logo">
+            </div>
+            <!-- <div class="qtd-pokemoncarregados">
+            <p>Insira a quantidade de pokemons a serem carregados!</p>
+            <input type="number" min="0" max="1292" placehoder="Insira aqui" id="qtdPoke">
+            <button id="carregar" onclick="loadPokemons()">Ir!</button>
+        </div> -->
+            <!-- <div class="music">
+                <div class="player">
+                    <button></button>
+                </div>
+                <div class="music-bar">
+                    <p>Ouça a música de Abertura!</p>
+                    <progress value="0.0" max="1.0"></progress>
+                </div>
+            </div>
+            <audio src="music/pokemon-music.mp3"></audio>
+        </div> -->
+
+
+
+    </header>
+    <div id="Pokemon">
+        <div id="Poke-content">
+
+        </div>
+    </div>
+    <div class="modal">
+        <div class="modal-content">
+            <div class="close-modal">
+                <button id="fechar" onclick="closeModal()">X</button>
+            </div>
+            <div class="pokeInformation">
+
+                <div class="poke-basic">
+                    <img id="pokeImg"></img>
+                    <p id="PokeId"></p>
+                    <p id="nomePoke"></p>
+                </div>
+                <div class="detail-information">
+
+                    <p id="PokeHeight"></p>
+                    <p id="PokeWeight"></p>
+                    <p id="PokeCategory"></p>
+                    <p id="PokeAbilitie"></p>
+
+                </div>
+
+            </div>
+            <div class="capturar">
+                <p id="addList"><b>Clique aqui para adicionar este pokémon à lista!</b></p>
+                <button id="poke-list" onclick="gerarLista()">
+                    <img class="poke-ball" src="img/poke-pobla.png">
+                    <p class="erro"></p>
+                </button>
+                <p class="loc-list">A lista ficará/está embaixo dos cards</p>
+
+            </div>
+        </div>
+    </div>
+    <div class="side-bar">
+        <div class="side-bar-content-display">
+            <div class="list-name">
+                <p>Lista de Pokémons adicionados</p>
+            </div>
+            <div class="side-bar-content">
+
+
+            </div>
+        </div>
+    </div>
+    </div>
+
+</body>
+
+</html>
