@@ -286,6 +286,7 @@ header{
     z-index: 1;
     bottom: 0;
     animation: side-bar-open-animation 0.8s;
+    right:0;
 }
 
 @keyframes side-bar-open-animation{
