@@ -20,7 +20,7 @@ header{
     color: #ffffff;
     height: 20vh;
     width:100%;
-    z-index: 1;
+    z-index: 999;
     top: 0;
 }
 
@@ -142,6 +142,43 @@ header{
     font-size: 1.1em;
 } */
 
+.open-side-bar{
+    position:fixed;
+    z-index: 980;
+    top:0;
+    width:8vw;
+    margin-left: 80%;
+    display: none;
+}
+
+
+#open-side-bar-btn{
+    border: none;
+    border-radius: 50%;
+    background-color: #FE4141;
+    transition: all 0.2s ease-in-out;
+    rotate:180deg;
+    transform: rotate(-90deg);
+}
+
+#open-side-bar-btn:hover{
+    transform: scale(1.1);
+}
+
+.open-side-bar-img                                                                                                                              {
+    width:5vw;
+    border-radius: 50%;  
+}
+
+
+.open-side-bar-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
 .modal {
     margin: auto;
     display: none; 
@@ -234,17 +271,36 @@ header{
     margin-left: 7vw;
 }
 
+.show-side-bar{
+    right: 16rem;
+}
+
 .side-bar{
-    position:absolute;
+    position:fixed;
     top: 0;
-    right: 0;
     display: none;
     height:120vh;
     width: 180px;
     gap: 10px;
     background-color: rgba(0, 0, 0, 0.5);
-    z-index: -3;
+    z-index: 1;
     bottom: 0;
+    animation: side-bar-open-animation 0.8s;
+}
+
+@keyframes side-bar-open-animation{
+    from{
+        right: -20rem;
+    }
+    to{
+        right: 0;
+    }
+}
+
+
+.side-bar-actived{
+    transition: all 0.8ms;
+    right:0;
 }
 
 .side-bar-content{
@@ -269,7 +325,7 @@ header{
     display: flex;
     flex-direction: column; 
     align-items: center ;
-    justify-content: center;
+
 }
 
 .list-name{
@@ -277,6 +333,31 @@ header{
     justify-content: center;
     align-items: center;
     text-align: center;
+    justify-content: center;
+}
+
+#fechar-side{
+    border: none;
+    background-color: rgba(33, 33, 33, 0);
+    /* background-color: rgba(33, 33, 33, 0); */
+    color: #ff0000;
+    cursor: pointer;
+    width: 4vw;
+    height: 4vw;
+    font-size: 4vw;
+    transition: all 0.5s ease-in-out;
+    font-weight: bold;
+}
+
+#fechar-side:hover{
+    transform: scale(1.2);
+}
+
+.close-side-bar{
+    display: none;
+    margin-top:20vh;
+    margin-bottom: -20vh;
+    margin-left: 2vw;
 }
 
 .erro{
@@ -285,6 +366,7 @@ header{
 
 .loc-list{
     display: none;
+    font-size: 12px;
 }
 
 /* .botao-play, .botao-pause {
@@ -316,6 +398,47 @@ header{
 
     .bck-imgCard{
         min-width: 17vw;
+    }
+
+     
+      .side-bar{
+        position:fixed; 
+        right: 0;
+        /* min-width: 30vw; */
+        /* bottom: 0; */
+        z-index: 10;
+        overflow-y:scroll;
+       
+    }
+
+    .side-bar::-webkit-scrollbar{
+        margin-top: 22vh;
+        height: 10vh;
+    }
+
+    .close-side-bar{
+        display: block;
+    }
+
+    .side-bar-content{
+        margin-top: 0;
+        display: flex;
+        align-items: center;
+        flex-direction:flex;
+        text-align: center;
+        justify-content: center;
+        margin-bottom: 100%;
+    }
+
+    .side-bar-content-display{
+        top: 0;
+    }
+
+    .open-side-bar{
+        display: none;
+        z-index: 999;
+        top:5vh;
+        color: #fff;
     }
 
 }
@@ -393,11 +516,13 @@ header{
         min-width: 5vw;
     }
 
-
+    .loc-list{
+        display: block;
+    }
 
 }
 
-@media only screen and (max-width: 980px){ 
+@media only screen and (max-width: 1000px){ 
 
     #Poke-content{
         align-items: center;
@@ -405,36 +530,15 @@ header{
         grid-template-columns: 240px 240px 240px;
     }
     
-    .side-bar{
-        position:relative;
-        max-height:20vh;
-        min-width: 100%;
-        z-index:10;
-        bottom: 0;
-    }
-    
-    .side-bar-content{
-        margin-top: 0;
-        display: flex;
-        align-items: center;
-        flex-direction: row;
-        text-align: center;
-        justify-content: center;
-    }
 
     .side-bar-content-display{ 
-        margin-top: 2vh;
+        /* position: absolute; */
         color: #fff;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-    }
-
-    .list-name{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        
     }
     
     .each-side-poke{
@@ -499,13 +603,11 @@ header{
     .each-side-pokemon-size{
         min-width: 10vw;
     }
-    
-
 
 }
 
 @media only screen and (max-width: 768px){
-   
+
     #Poke-content{
         align-items: center;
         display: grid;
@@ -574,6 +676,12 @@ header{
     .capturar{
         text-align: center;
     }
+
+    .open-side-bar{
+        margin-top: 2vh;
+    }
+
+
 } 
 
 
@@ -593,7 +701,7 @@ header{
     }
 
     .logo{
-        width:50vw;
+        width:45vw;
     }
    
     #Poke-content{
@@ -657,16 +765,36 @@ header{
     }
 
     .each-side-poke{
-        font-size: 12px;
+        font-size: 15px;
         margin-right: 1.5vw;
         margin-left: 1.5vw;
     }
 
-    .each-side-pokemon-size{
-        min-width: 10vw;
+    .close-side-bar{
+        margin-top: 10vh;
+        margin-bottom: -10vh;
     }
 
-    
+    #fechar-side{
+        font-size: 10vw;
+    }
+
+    .each-side-pokemon-size{
+        min-width: 13vw;
+    }
+
+    .side-bar-content-display{
+        margin-top: 10vh;
+    }
+
+
+    .open-side-bar-img{
+        min-width: 7vw;
+    }
+
+    .open-side-bar{
+        margin-top: -3vh;
+    }
 }
 
 @media only screen and (max-width: 385px){
@@ -684,7 +812,6 @@ header{
         
         min-height: 50vh;
         min-width: 80vw;
-        
     }    
 
 
@@ -696,6 +823,10 @@ header{
 
     .poke-ball{
         min-width: 15vw;
+    }
+
+    .open-side-bar-img{
+        width: 8vw;
     }
 }
 
@@ -713,26 +844,18 @@ header{
         
     }    
 
-
     .poke-ball{
         min-width: 15vw;
     }
 
-    .side-bar-content{
-        display: grid;
-        grid-template-columns: 5vw 5vw 5vw;
-        grid-column-gap: 80px;
-        
-        
-    }
-
     .each-side-poke{
-        font-size: 12px;
+        font-size: 15px;
     }
 
     .each-side-pokemon-size{
-        min-width: 10vw;
+        min-width: 20vw;
     }
     
+
 }
 

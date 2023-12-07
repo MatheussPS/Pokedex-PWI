@@ -1,4 +1,4 @@
-let carregarPoke = 12
+let carregarPoke = 251
 const POKEAPI = "https://pokeapi.co/api/v2/pokemon/";
 
 function loadPokemons() {
@@ -118,8 +118,10 @@ function gerarLista() {
   const ListaPokemon = document.getElementById("poke-list")
   const barraLateral = document.querySelector('.side-bar')
   const listaBarra = document.querySelector(".side-bar-content")
+  const divOpen = document.querySelector(".open-side-bar")
 
   barraLateral.style.display = "block"
+  divOpen.style.display = "none"
 
   fetch(`${POKEAPI}` + `?limit=${carregarPoke}`).then(async (response) => {
 
@@ -167,7 +169,7 @@ function gerarLista() {
               listaBarra.appendChild(SidePokemonContent)
               SidePokemonContent.classList.add("each-side-poke")
               criarSidePokemon.classList.add("each-side-pokemon-size")
-              
+
 
               qtdPokemonsLista++;
 
@@ -200,6 +202,27 @@ const exibirerro = function (quantidade) {
 
 }
 
+
+
+function openSideBar() {
+
+  const barraLateral = document.querySelector('.side-bar')
+  const valordispbarra = barraLateral.style.display
+  const divOpen = document.querySelector(".open-side-bar")
+
+  barraLateral.style.display = "block"
+
+  divOpen.style.display = "none"
+
+}
+
+function closeSideBar() {
+  const divOpen = document.querySelector(".open-side-bar")
+  const barraLateral = document.querySelector('.side-bar')
+
+  divOpen.style.display = "block"
+  barraLateral.style.display = "none"
+}
 
 
 
