@@ -119,9 +119,12 @@ function gerarLista() {
   const barraLateral = document.querySelector('.side-bar')
   const listaBarra = document.querySelector(".side-bar-content")
   const divOpen = document.querySelector(".open-side-bar")
-
+  const divOpnebtn = document.getElementById("open-side-bar-btn")
+  
+  divOpnebtn.style.rotate = "270deg"
+  divOpnebtn.style.transform = "rotate(-90deg)"
   barraLateral.style.display = "block"
-  divOpen.style.display = "none"
+  divOpen.style.display = "block"
 
   fetch(`${POKEAPI}` + `?limit=${carregarPoke}`).then(async (response) => {
 
@@ -212,8 +215,9 @@ function openSideBar() {
 
   barraLateral.style.display = "block"
 
-  divOpen.style.display = "none"
-
+  const divOpnebtn = document.getElementById("open-side-bar-btn")
+  divOpnebtn.style.rotate = "270deg"
+  divOpnebtn.style.transform = "rotate(-90deg)"
 }
 
 function closeSideBar() {
@@ -222,6 +226,12 @@ function closeSideBar() {
 
   divOpen.style.display = "block"
   barraLateral.style.display = "none"
+  const divOpnebtn = document.getElementById("open-side-bar-btn")
+  
+  divOpnebtn.style.rotate = "-90deg"
+  divOpnebtn.style.transform = "rotate(180deg)"
+  divOpnebtn.classList.add("rotate")
+
 }
 
 

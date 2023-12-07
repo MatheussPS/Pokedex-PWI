@@ -157,7 +157,7 @@ header{
     border-radius: 50%;
     background-color: #FE4141;
     transition: all 0.2s ease-in-out;
-    rotate:180deg;
+    rotate:90deg;
     transform: rotate(-90deg);
 }
 
